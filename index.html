@@ -2,79 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Azure Cloud Architect - 거니</title>
+  <title>Azure Managed Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0a192f; color: #ccd6f6; }
-    header { background: #112240; position: fixed; width: 100%; z-index: 1000; padding: 20px; }
-    nav a { margin: 0 15px; color: #64ffda; text-decoration: none; font-weight: bold; }
-    section { padding: 100px 20px; min-height: 100vh; }
-    h1, h2 { color: #64ffda; }
-    .bar { background: #233554; height: 25px; width: 100%; border-radius: 5px; margin-top: 5px; }
-    .fill { background: #64ffda; height: 100%; border-radius: 5px; }
-    footer { background: #112240; padding: 20px; text-align: center; }
+    body {
+      margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+    header {
+      padding: 20px; text-align: center; font-size: 30px;
+      color: #64ffda; font-weight: bold;
+    }
+    .container {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      margin: 20px;
+    }
+    .card {
+      background: #112240;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+      margin: 20px;
+      padding: 30px;
+      width: 400px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .title {
+      color: #64ffda;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .description {
+      color: #ccc;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .button {
+      padding: 15px 25px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .button-blue {
+      background: #00c6ff;
+      color: #fff;
+    }
+    .button-blue:hover {
+      background: #0072ff;
+    }
+    .button-purple {
+      background: #a64bf4;
+      color: #fff;
+    }
+    .button-purple:hover {
+      background: #6f29b6;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<header>Azure Managed Service</header>
 
-<section id="home">
-  <h1>Azure Cloud Architect</h1>
-  <p>MSP Specialist · Automation · AI Integration</p>
-</section>
-
-<section id="about">
-  <h2>About Me</h2>
-  <p>11년차 클라우드 엔지니어로 Azure 기반 MSP 통합 운영, 자동화, 클라우드 마이그레이션 프로젝트를 다수 수행했습니다. Python 기반 자동화, AI 실험 프로젝트, 고객 인프라 안정화까지 폭넓은 경험을 보유하고 있습니다.</p>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <p>Azure 핵심 영역</p>
-  <div>Compute (VM, AppService, Functions)
-    <div class="bar"><div class="fill" style="width:90%"></div></div>
+<div class="container">
+  <div class="card">
+    <div class="title">Azure Copilot</div>
+    <div class="description">
+      Azure 업무 자동화 및 문제 해결을 위한 Copilot 시스템.  
+      ChatGPT 기반 실시간 AI 보조 시스템.
+    </div>
+    <button class="button button-blue" onclick="window.open('https://chatgpt.com/g/g-68363f35220c81918443b6a9c162c029-awsome-friday','_blank')">
+      Copilot 바로가기 →
+    </button>
   </div>
-  <div>AKS / Kubernetes
-    <div class="bar"><div class="fill" style="width:85%"></div></div>
-  </div>
-  <div>Networking (VNET/VPN/ExpressRoute)
-    <div class="bar"><div class="fill" style="width:80%"></div></div>
-  </div>
-  <div>Terraform / Bicep / IaC
-    <div class="bar"><div class="fill" style="width:75%"></div></div>
-  </div>
-  <div>Monitoring & Automation
-    <div class="bar"><div class="fill" style="width:80%"></div></div>
-  </div>
-</section>
 
-<section id="portfolio">
-  <h2>Portfolio</h2>
-  <ul>
-    <li>Azure 기반 MSP 통합 운영 자동화 시스템 구축</li>
-    <li>Terraform 기반 Azure Resource 자동 생성 시스템</li>
-    <li>Azure Monitor 기반 장애 대응 자동화 시스템</li>
-  </ul>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: your_email@example.com</p>
-  <p>LinkedIn: <a href="#" style="color:#64ffda">your_linkedin</a></p>
-</section>
-
-<footer>
-  &copy; 2025 거니의 Azure Portfolio
-</footer>
+  <div class="card">
+    <div class="title">Azure FactChecker</div>
+    <div class="description">
+      Azure 공식 문서 기반 기술 검증 & 사실확인 시스템.
+      NotebookLM 기반 심층 자료 제공.
+    </div>
+    <button class="button button-purple" onclick="window.open('https://notebooklm.google.com/notebook/ad510432-4aba-40a1-a4df-98b6790a7607','_blank')">
+      FactChecker 바로가기 →
+    </button>
+  </div>
+</div>
 
 </body>
 </html>
