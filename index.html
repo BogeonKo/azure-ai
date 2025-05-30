@@ -1,42 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Azure Managed Service - 거니</title>
+  <title>Azure MSP - 거니 포트폴리오</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { margin:0; font-family: 'Segoe UI', sans-serif; background: #0a192f; color: #ccd6f6; scroll-behavior: smooth; }
-    header { background: #112240; position: fixed; width: 100%; z-index: 1000; padding: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.5);}
-    nav { text-align: center; }
-    nav a { margin: 0 20px; color: #64ffda; text-decoration: none; font-weight: bold; font-size: 18px; }
-    nav a:hover { color: #ffffff; }
-    section { padding: 100px 20px; min-height: 100vh; text-align: center; }
-    h1, h2 { color: #64ffda; margin-bottom: 20px; }
-    .container { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; }
+    /* 기본 설정 */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a192f; color: #ccd6f6; }
+
+    /* 헤더 */
+    header {
+      position: fixed; top: 0; width: 100%; background: #112240; z-index: 999;
+      display: flex; justify-content: space-between; align-items: center; padding: 20px 50px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    header .logo { font-size: 26px; color: #ff66ff; font-weight: bold; }
+    nav a {
+      color: #64ffda; margin-left: 30px; text-decoration: none; font-weight: bold; font-size: 18px;
+    }
+    nav a:hover { color: #fff; }
+
+    /* 섹션 기본 */
+    section { padding: 120px 20px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+
+    /* Hero 영역 */
+    #home { background: radial-gradient(circle, #112240, #0a192f); }
+    #home h1 { font-size: 50px; color: #e5baff; margin-bottom: 30px; text-shadow: 0 0 10px #ff66ff; }
+    #home p { font-size: 20px; margin-bottom: 50px; }
+    .hero-button {
+      background: #ff66ff; color: #fff; padding: 20px 50px; border-radius: 50px; font-weight: bold; font-size: 20px;
+      border: none; cursor: pointer; transition: 0.3s;
+    }
+    .hero-button:hover { background: #ff33cc; }
+
+    /* 카드 영역 */
+    .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; }
     .card {
-      background: #112240;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,255,255,0.2);
-      padding: 30px;
-      width: 400px;
-      transition: transform 0.3s;
+      background: #112240; border-radius: 15px; box-shadow: 0 0 20px rgba(0,255,255,0.3);
+      padding: 40px; width: 400px; transition: 0.3s;
     }
     .card:hover { transform: translateY(-10px); }
-    .description { color: #ccc; font-size: 16px; margin: 20px 0; }
+    .card-title { font-size: 26px; color: #64ffda; margin-bottom: 20px; }
+    .desc { font-size: 16px; color: #ccc; margin-bottom: 30px; }
     .button {
-      padding: 15px 30px;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-top: 15px;
+      padding: 15px 30px; border-radius: 10px; font-weight: bold; font-size: 16px; border: none; cursor: pointer; transition: 0.3s;
     }
-    .button-blue { background: #00c6ff; color: #fff; }
-    .button-blue:hover { background: #0072ff; }
-    .button-purple { background: #a64bf4; color: #fff; }
-    .button-purple:hover { background: #6f29b6; }
+    .blue { background: #00c6ff; color: #fff; }
+    .blue:hover { background: #0072ff; }
+    .purple { background: #a64bf4; color: #fff; }
+    .purple:hover { background: #6f29b6; }
+
+    /* 시너지 설명 */
+    #synergy h2 { font-size: 32px; color: #64ffda; margin-bottom: 30px; }
+    #synergy p { font-size: 18px; width: 70%; }
+
+    /* Contact */
+    #contact h2 { font-size: 28px; color: #64ffda; margin-bottom: 20px; }
+    #contact p { font-size: 16px; color: #ccc; }
+
+    /* 푸터 */
     footer { background: #112240; padding: 20px; text-align: center; color: #aaa; }
   </style>
 </head>
@@ -44,57 +68,53 @@
 <body>
 
 <header>
+  <div class="logo">Managed Service for Azure</div>
   <nav>
-    <a href="#home">Home</a>
-    <a href="#copilot">Copilot</a>
-    <a href="#factchecker">FactChecker</a>
-    <a href="#contact">Contact</a>
+    <a href="#home">AI 동료 소개</a>
+    <a href="#tools">AI 대화하기</a>
+    <a href="#synergy">활용 시너지</a>
+    <a href="#contact">문의하기</a>
   </nav>
 </header>
 
 <section id="home">
-  <h1>Azure Managed Service</h1>
-  <p>거니 전용 클라우드 MSP AI 자동화 플랫폼</p>
+  <h1>지금 만나보세요.</h1>
+  <p>AI 동료가 Azure MSP 업무의 새로운 가능성을 지원합니다.</p>
+  <button class="hero-button" onclick="location.href='#tools'">AI 동료 탐험하기 →</button>
 </section>
 
-<section id="copilot">
-  <h2>Azure Copilot</h2>
+<section id="tools">
   <div class="container">
     <div class="card">
-      <div class="description">
-        Azure 업무 자동화 및 문제 해결을 위한 AI Copilot 시스템.  
-        ChatGPT 기반 실시간 보조.
-      </div>
-      <button class="button button-blue" onclick="window.open('https://chatgpt.com/g/g-68363f35220c81918443b6a9c162c029-awsome-friday','_blank')">
-        Copilot 바로가기 →
-      </button>
+      <div class="card-title">Azure Copilot</div>
+      <div class="desc">Azure 업무 자동화 및 문제 해결을 지원하는 Copilot 시스템 (ChatGPT 기반)</div>
+      <button class="button blue" onclick="window.open('https://chatgpt.com/g/g-68363f35220c81918443b6a9c162c029-awsome-friday','_blank')">Copilot 바로가기 →</button>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Azure FactChecker</div>
+      <div class="desc">Azure 공식 문서 기반 기술 검증 & 사실 확인 시스템 (NotebookLM)</div>
+      <button class="button purple" onclick="window.open('https://notebooklm.google.com/notebook/ad510432-4aba-40a1-a4df-98b6790a7607','_blank')">FactChecker 바로가기 →</button>
     </div>
   </div>
 </section>
 
-<section id="factchecker">
-  <h2>Azure FactChecker</h2>
-  <div class="container">
-    <div class="card">
-      <div class="description">
-        Azure 공식 문서 기반 기술 검증 & 사실확인 시스템.  
-        NotebookLM 기반 심층 기술 자료 제공.
-      </div>
-      <button class="button button-purple" onclick="window.open('https://notebooklm.google.com/notebook/ad510432-4aba-40a1-a4df-98b6790a7607','_blank')">
-        FactChecker 바로가기 →
-      </button>
-    </div>
-  </div>
+<section id="synergy">
+  <h2>💡 두 AI 동료, 시너지로 완성되는 업무 혁신</h2>
+  <p>
+    Copilot과 FactChecker가 함께 Azure 업무의 데이터 기반 진단과 자동화 해결을 지원합니다.<br>
+    빠른 분석과 검증을 바탕으로 보다 높은 효율성과 품질을 제공합니다.
+  </p>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
+  <h2>📩 문의하기</h2>
   <p>이메일: your_email@example.com</p>
   <p>LinkedIn: your_linkedin_profile</p>
 </section>
 
 <footer>
-  &copy; 2025 거니의 Azure Portfolio
+  &copy; 2025 거니의 Azure MSP Portfolio
 </footer>
 
 </body>
