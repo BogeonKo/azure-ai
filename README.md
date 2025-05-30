@@ -1,1 +1,1 @@
-# Azure AI Portfolio
+# Azure AI
